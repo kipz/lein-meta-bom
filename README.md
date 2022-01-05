@@ -23,7 +23,7 @@ Which will generate a jar file named `<project-name>-metabom.jar` containing onl
 
 ```shell
 $ lein metabom
-Creating metabom:  /home/kipz/scm/kipz/lein-meta-bom/test-projects/target/test-project-metabom-0.1.0-SNAPSHOT.jar
+Creating metabom:  /home/build/target/test-project-metabom-0.1.0-SNAPSHOT.jar
 Found 13 dependencies
 Adding metabom entry:  META-INF/MANIFEST.MF
 Adding metabom entry:  META-INF/maven/org.kipz/test-project-metabom/pom.xml
