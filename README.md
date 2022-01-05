@@ -1,6 +1,6 @@
 # lein-metabom
 
-[![Clojars Project](https://img.shields.io/clojars/v/org.kipz/lein-metabom.svg)](https://clojars.org/org.kipz/lein-metabom)
+[![Clojars Project](https://img.shields.io/clojars/v/org.kipz/lein-meta-bom.svg)](https://clojars.org/org.kipz/lein-meta-bom)
 
 ## Description
 
