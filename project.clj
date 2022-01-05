@@ -1,4 +1,4 @@
-(defproject org.kipz/lein-meta-bom "0.1.0-SNAPSHOT"
+(defproject org.kipz/lein-meta-bom "0.1.0"
   :description "Generate a thin jar file representing a bill of materials (BOM) for use by scanners like grype, trivy etc"
   :url "https://github.com/kipz/lein-meta-bom"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
