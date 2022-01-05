@@ -10,7 +10,7 @@ This is useful if, for example, if you are creating uberjars, graalvm native ima
 
 ## Usage
 
-Put `[org.kipz/lein-meta-bom "0.1.0"]` into the `:plugins` vector of your `:user`
+Put `[org.kipz/lein-meta-bom "<version>"]` into the `:plugins` vector of your `:user`
 profile or in the `:plugins` of your poject.clj:
 
 Then run
@@ -34,6 +34,15 @@ Adding metabom entry:  META-INF/maven/cc.qbits/commons/pom.xml
 Adding metabom entry:  META-INF/maven/cc.qbits/commons/pom.properties
 Adding metabom entry:  META-INF/maven/org.clojure/clojure/pom.xml
 ...
+```
+
+## Configuration
+
+The generated jar name can be configured by configuring the `metabom` profile in the usual ways:
+
+```clojure
+{:metabom {
+    :jar-name "metabom.jar"}}
 ```
 
 

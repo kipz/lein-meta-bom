@@ -80,20 +80,23 @@ version=%s\n" artifact group version))
 (defn metabom
   "Create the meta jar - no classes"
   [project & args]
-
   (let [;; creates target directory etc
         _ (jar/get-jar-filename project)
-        filename (format "%s/%s-metabom-%s.jar"
-                         (:target-path project)
-                         (:name project)
-                         (:version project))]
+        project (project/merge-profiles project [:metabom])
+        deps (->> (classpath/managed-dependency-hierarchy
+                   :dependencies :managed-dependencies project)
+                  flatten-graph)
+        filename (if-let [jar-name (-> project :metabom :jar-name)]
+                   (format "%s/%s"
+                           (:target-path project)
+                           jar-name)
+                   (format "%s/%s-metabom-%s.jar"
+                           (:target-path project)
+                           (:name project)
+                           (:version project)))]
     (main/info "Creating metabom: " filename)
     (with-open [out (->  filename
                          (FileOutputStream.)
                          (ZipOutputStream.))]
-      (let [project (project/unmerge-profiles project [:default])
-            deps (->> (classpath/managed-dependency-hierarchy
-                       :dependencies :managed-dependencies project)
-                      flatten-graph)]
-        (main/info (format "Found %s dependencies" (count deps)))
-        (write-meta project deps out)))))
+      (main/info (format "Found %s dependencies" (count deps)))
+      (write-meta project deps out))))
