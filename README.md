@@ -10,7 +10,7 @@ This is useful if, for example, if you are creating uberjars, graalvm native ima
 
 ## Usage
 
-Put `[org.kipz/lein-metabom "0.1.0"]` into the `:plugins` vector of your `:user`
+Put `[org.kipz/lein-meta-bom "0.1.0"]` into the `:plugins` vector of your `:user`
 profile or in the `:plugins` of your poject.clj:
 
 Then run
